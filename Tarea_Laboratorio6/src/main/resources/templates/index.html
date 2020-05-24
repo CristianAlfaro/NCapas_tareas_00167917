@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlms:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Agregar Contribuyente</title>
+</head>
+<body>
+	
+	<h1>Guardar Contribuyente</h1>
+	<form method="post" th:action="@{/guardarCont}" th:object="${contribuyente}">
+		<label>Nombre: <input type="text" id="snombre" th:field="*{snombre}" ></label><br>
+		<label>Apellido: <input type="text" id="snombre" th:field="*{sapellido}" ></label><br>
+		<label>NIT: <input type="text" id="snombre" th:field="*{snit}" ></label><br>
+		<label>Importancia: </label>
+		<select th:field="*{cimportancia}">
+			<option th:each="i: ${importancias}" th:value="${i.cimportancia}"><th th:text="${i.simportancia}"></th></option>
+		</select><br>
+		<input type="submit" value="Guardar">
+	</form>
+
+	<input type="button" value="Ver contribuyentes" onclick="location.href='./contribuyentes'" />
+</body>
+</html></html>

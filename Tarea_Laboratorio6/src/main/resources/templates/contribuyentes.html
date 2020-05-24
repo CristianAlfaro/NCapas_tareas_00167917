@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlms:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Ver Contribuyentes</title>
+</head>
+<body>
+	
+	<h1>Listado de contribuyentes</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>NIT</th>
+				<th>Importancia</th>
+				<th>Fecha de Ingreso</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="c : ${contribuyentes}">
+				<td th:text="${c.snombre}"></td>
+				<td th:text="${c.sapellido}"></td>
+				<td th:text="${c.snit}"></td>
+				<td th:text="${c.importancia.simportancia}"></td>
+				<td th:text="${c.fingresoDelegate}"></td>
+			</tr>
+		</tbody>
+	</table><br>
+	
+	<input type="button" value="Regresar" onclick="location.href='./'" />
+
+</body>
+</html></html>
