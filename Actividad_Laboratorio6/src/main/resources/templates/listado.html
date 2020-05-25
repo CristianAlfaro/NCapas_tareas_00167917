@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlms:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista de Estudiantes</title>
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<div class="container-contact100" style="background-image: url('images/bg-01.jpg');">
+<div class="wrap-contact100">
+	<form class="contact100-form validate-form" th:action="@{/formEstudiante}" th:object="${estudiante}" method="post">
+	<table>
+		<thead>
+			<th>Codigo</th>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Carne</th>
+			<th>Carrera</th>
+		</thead>
+		<th:block th:each="estudiante, row: ${estudiantes}">
+			<tr>
+				<td th:text="${estudiante.codigo}"/>
+				<td th:text="${estudiante.nombre}"/>
+				<td th:text="${estudiante.apellido}"/>
+				<td th:text="${estudiante.carne}"/>
+				<td th:text="${estudiante.carrera}"/>
+			</tr>
+		</th:block>
+	</table>
+	
+	<br>
+	<br>
+	<a class="contact100-more" href="/inicio" style="text-decoration:none; color: #000;">Volver</a>
+	</form>
+</div>
+</div>
+</body>
+</html>
