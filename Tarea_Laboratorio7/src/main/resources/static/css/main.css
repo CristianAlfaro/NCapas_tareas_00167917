@@ -154,6 +154,14 @@ iframe {
     padding: 3em 5em;
 }
 
+.wrap-contact101 {
+    display: flex;
+}
+
+.wrap-contact99 {
+	margin: 1em;
+}
+
 
 /*==================================================================
 [ Form ]*/
@@ -428,7 +436,6 @@ textarea.input100 {
 table{
 	text-align: center;
 }
-
 
 th, td{
 	padding: 1em;

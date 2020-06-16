@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlms:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Modificar Estudiantes</title>
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div class="container-contact100" style="background-image: url('images/bg-01.jpg');">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" th:action="@{/modificarEstudiante}" th:object="${estudiante}" method="post">
+				<h1>Modificar Estudiante</h1>
+					<input type="hidden" th:field="${estudiante.codigo}" th:value="${estudiante.codigo}">
+					<label class="label-input100">Nombre :</label>
+					<input class="input100" type="text" th:field="${estudiante.nombre}" th:value="${estudiante.nombre}">
+					<span th:errors="${estudiante.nombre}" style="color:  #E81505;"></span>
+					
+					<label class="label-input100">Apellido:</label>
+					<input class="input100" type="text" th:field="${estudiante.apellido}" th:value="${estudiante.apellido}">
+					<span th:errors="${estudiante.apellido}" style="color:  #E81505;"></span>
+					
+					<label class="label-input100">Carne:</label>
+					<input class="input100" type="number" th:field="${estudiante.carne}" th:value="${estudiante.carne}">
+					<span th:errors="${estudiante.carne}" style="color:  #E81505;"></span>
+					
+					<label class="label-input100">Carrera:</label>
+					<input class="input100" type="text" th:field="${estudiante.carrera}" th:value="${estudiante.carrera}">
+					<span th:errors="${estudiante.carrera}" style="color:  #E81505;"></span><br>
+					
+					<input class="contact100-form-btn" type="submit" value="Modificar estudiante">
+			</form><br>
+			<a class="contact100-more" href="/inicio" style="text-decoration:none; color: #000;">Volver</a>
+		</div>
+	</div>
+</body>
+</html>
